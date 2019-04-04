@@ -24,10 +24,11 @@
             <br></br>
             
             <h2>Propiedades de UISelectMany</h2>
+            <h:outputLabel for="newslettercheckbox" value="Selecciona "/>
             <h:selectManyCheckbox id="newslettercheckbox" layout="pageDirection" value="#{cashierBean.newsletters}">
-                <f:selectItems value="#{cashierBean.newsletterItems}"/>
+                <f:selectItems value="#{cashierBean.listaAnimales}"/>
             </h:selectManyCheckbox>
-            
+            <br></br>
             
         </h:form>
     </h:body>

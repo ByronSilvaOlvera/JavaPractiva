@@ -6,6 +6,8 @@ import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.Date;
+import java.util.List;
+import java.util.ArrayList;
 import javax.faces.model.SelectItem;
 
 @Named(value = "cashierBean")
@@ -14,6 +16,27 @@ public class CashierBean implements Serializable {
     protected String name = null;
     private Date shipDate = new Date();
     private String[] newsletters;
+    
+    private List<SelectItem> listaAnimales; 
+    
+    public void init() {
+        listaAnimales = new ArrayList<SelectItem>();
+        listaAnimales.add(new SelectItem(1, "Duke's Quarterly"));
+        listaAnimales.add(new SelectItem(2, "Duke's Quarterly"));
+        listaAnimales.add(new SelectItem(3, "Duke's Quarterly"));
+        listaAnimales.add(new SelectItem(4, "Duke's Quarterly"));
+        listaAnimales.add(new SelectItem(5, "Duke's Quarterly"));
+    }
+
+    public List<SelectItem> getListaAnimales() {
+        return listaAnimales;
+    }
+
+    public void setListaAnimales(List<SelectItem> listaAnimales) {
+        this.listaAnimales = listaAnimales;
+    }
+    
+    
     
     private static final SelectItem[] newsletterItems = {
         new SelectItem("Duke's Quarterly"),
@@ -25,8 +48,8 @@ public class CashierBean implements Serializable {
     public static SelectItem[] getNewsletterItems() {
         return newsletterItems;
     }
-
-   
+    
+     
 
     public String[] getNewsletters() {
         return newsletters;
@@ -35,10 +58,8 @@ public class CashierBean implements Serializable {
     public void setNewsletters(String[] newsletters) {
         this.newsletters = newsletters;
     }
+      
     
-    
-    
-
     public Date getShipDate() {
         return shipDate;
     }
@@ -58,7 +79,7 @@ public class CashierBean implements Serializable {
     
     
     
-    public CashierBean() {
-    }
+   // public CashierBean() {
+   // }
     
 }
